@@ -25,6 +25,12 @@
             </div>
             <div class="chat-section" v-if="activeContact !== null">
                 <div class="chat">
+                    <!-- HEADER DEL CONTATTO ATTIVO -->
+                    <div class="chat-header">
+                        <img :src="contacts[activeContact].avatar" alt="Avatar" class="avatar">
+                        {{ contacts[activeContact].name }}
+                        <p class="last-access-active">Ultimo accesso alle {{ contacts[activeContact].messages.at(-1).date.split(" ")[1] }}</p>
+                    </div>
                 </div>
             </div>
         </div>
