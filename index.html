@@ -31,6 +31,13 @@
                         {{ contacts[activeContact].name }}
                         <p class="last-access-active">Ultimo accesso alle {{ contacts[activeContact].messages.at(-1).date.split(" ")[1] }}</p>
                     </div>
+                    <!-- MESSAGGI DEL CONTATTO ATTIVO -->
+                    <div class="messages">
+                        <div v-for="(message, index) in contacts[activeContact].messages" :key="index" class="message" :class="message.status">
+                            {{ message.message }} <br>
+                            <p class="date-message">{{ message.date.split(" ")[1] }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
