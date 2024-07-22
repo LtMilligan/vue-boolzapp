@@ -174,6 +174,23 @@ createApp({
     methods: {
         selectContact(index) {
             this.activeContact = index;
+        },
+        sendMessage() {
+            if (this.newMessage.trim() !== '') {
+                this.contacts[this.activeContact].messages.push({
+                    date: new Date().toLocaleString(),
+                    message: this.newMessage,
+                    status: 'sent'
+                });
+                this.newMessage = '';
+                setTimeout(() => {
+                    this.contacts[this.activeContact].messages.push({
+                        date: new Date().toLocaleString(),
+                        message: 'Non ho capito!',
+                        status: 'received'
+                    });
+                }, 1000);
+            }
         }
     }
 }).mount('#app');
