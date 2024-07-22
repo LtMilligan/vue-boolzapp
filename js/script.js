@@ -191,6 +191,12 @@ createApp({
                     });
                 }, 1000);
             }
+        },
+        filtroContatti() {
+            const ricerca = this.ricercaContatto.toLowerCase();
+            this.contacts.forEach(contact => {
+                contact.visible = contact.name.toLowerCase().includes(ricerca);
+            });
         }
     }
 }).mount('#app');
