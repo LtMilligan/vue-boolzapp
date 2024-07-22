@@ -16,6 +16,10 @@
                     <i class="bi bi-whatsapp t-zapp logo"></i>
                     <p class="logo-text t-zapp">Boolzapp</p>
                 </div>
+                <!-- BARRA DI RICERCA PER CONTATTI -->
+                <div class="serch-section">
+                    <input type="text" id="searchContact" v-model="ricercaContatto" placeholder='&#128269; Cerca tra i tuoi contatti' class="w-100" @keyup="filtroContatti()">
+                </div>
                 <!-- ELENCO CONTATTI -->
                 <div v-for="(contact, index) in contacts" :key="index" class="contact" @click="selectContact(index)" :class="contact.visible == true ? 'd-flex' : 'd-none'">
                     <img :src="contact.avatar" alt="Avatar" class="avatar">
