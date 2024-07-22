@@ -38,6 +38,11 @@
                             <p class="date-message">{{ message.date.split(" ")[1] }}</p>
                         </div>
                     </div>
+                    <!-- INSERIMENTO TESTO PER NUOVO MESSAGGIO -->
+                    <div class="chat-input">
+                        <input type="text" v-model="newMessage" @keyup.enter="sendMessage" placeholder="Scivi un messaggio">
+                        <button @click="sendMessage"><i class="bi bi-arrow-right-square"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
