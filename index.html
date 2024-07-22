@@ -12,6 +12,10 @@
     <div id="app">
         <div class="container my-3">
             <div class="contacts-section">
+                <div class="logo-section justify-content-center py-3">
+                    <i class="bi bi-whatsapp t-zapp logo"></i>
+                    <p class="logo-text t-zapp">Boolzapp</p>
+                </div>
                 <!-- ELENCO CONTATTI -->
                 <div v-for="(contact, index) in contacts" :key="index" class="contact" @click="selectContact(index)" :class="contact.visible == true ? 'd-flex' : 'd-none'">
                     <img :src="contact.avatar" alt="Avatar" class="avatar">
